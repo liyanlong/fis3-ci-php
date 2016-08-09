@@ -13,8 +13,7 @@
         <?php import('static/css/coda-slider.css'); ?>
         <!-- 标记css输出位置 -->
         <?php placeholder('css');?>
-        <!-- 加载同步的js -->
-        <?php import('static/js/jquery-1.2.6.js'); ?>
+
     </head>
 
     <?php scriptStart(); ?>

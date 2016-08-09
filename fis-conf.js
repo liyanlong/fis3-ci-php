@@ -24,20 +24,20 @@ fis.set('project.ignore',[
 fis.match('/widget/**', {
     isMod : true,
     release: '/public/static/$0',
-    url: '/fis-demo/public/static$0'
+    domain: 'http://192.168.41.104/~liyl/fis-php-ci'
+//    url: '/fis-demo/public/static$0'
 });
 
 // 发布 static 文件
 fis.match('/static/**', {
-    isMod : false,
-    release: '$0',
-    url: '/fis-demo/public$0'
+    release: '/public/$0',
+    domain: 'http://192.168.41.104/~liyl/fis-php-ci'
 });
 
 // 匹配依赖
 fis.match('/map.json',{
     release: '/application/config/map.json'
-})
+});
 
 // 组件页面
 fis.match("/{page,widget}/**.php",{
@@ -49,6 +49,6 @@ fis.match("/{page,widget}/**.php",{
 
 // 开启组件同名依赖
 // 加载了 header.php 组件 可以加载 同名的 header.css , header.js
-fis.match('*.{html,js,php}', {
-  useSameNameRequire: true
-});
+// fis.match('*.{html,js,php}', {
+//   useSameNameRequire: true
+// });
