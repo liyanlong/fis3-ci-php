@@ -1,0 +1,5 @@
+public/static/
+application/tpl/
+application/config/map.json
+node_modules/
+deployment-config.json
