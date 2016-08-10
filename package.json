@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "fis3-hook-commonjs": "^0.1.25",
     "fis3-hook-module": "^1.2.2"
   }
 }

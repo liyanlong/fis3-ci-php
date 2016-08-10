@@ -13,13 +13,12 @@
         <?php import('static/css/coda-slider.css'); ?>
         <!-- 标记css输出位置 -->
         <?php placeholder('css');?>
-
     </head>
 
     <?php scriptStart(); ?>
     <script type="text/javascript">
-      require.async('widget/header/header.js',function(header){
-            console.log(header);
+      require.async(['widget/header/header.js','widget/common/common.js'],function(){
+            console.log(arguments);
       })
     </script>
     <?php scriptEnd(); ?>

@@ -108,6 +108,7 @@ class Baidu_FIS_Resource {
 
         if(isset(self::$arrMap[$strNamespace]) || self::register($strNamespace)) {
             $arrMap = &self::$arrMap[$strNamespace];
+
             if (isset($arrMap['res'][$strName])) {
 
                 $arrRes = &$arrMap['res'][$strName];
