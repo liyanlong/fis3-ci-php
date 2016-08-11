@@ -338,6 +338,7 @@ class Baidu_FIS_Resource {
      */
     public static function load($strName, $async = false){
         if(isset(self::$arrLoaded[$strName])) {
+
             //同步组件优先级比异步组件高
             if (!$async && isset(self::$arrRequireAsyncCollection['res'][$strName])) {
                 self::delAsyncDeps($strName);
@@ -428,6 +429,7 @@ function scriptStart() {
 function scriptEnd() {
     $script = ob_get_clean();
     $reg = "/(<script(?:\s+[\s\S]*?[\"'\s\w\/]>|\s*>))([\s\S]*?)(?=<\/script>|$)/i";
+
     if(preg_match($reg,$script,$matches)){
         Baidu_FIS_Resource::addScriptPool($matches[2]);
     }else{

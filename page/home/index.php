@@ -17,9 +17,10 @@
 
     <?php scriptStart(); ?>
     <script type="text/javascript">
-      require.async(['widget/header/header.js','widget/common/common.js'],function(){
+        var common = require('widget/common/common.js');
+        require.async(['widget/header/header.js','widget/common/common.js'],function(){
             console.log(arguments);
-      })
+        });
     </script>
     <?php scriptEnd(); ?>
     <body>

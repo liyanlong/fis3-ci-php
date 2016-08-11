@@ -1,8 +1,12 @@
 //模块化方案，本项目选中CommonJS方案(同样支持异步加载哈)
-// npm install fis3-hook-module  fis3-hook-commonjs
+// npm install fis3-hook-commonjs
 fis.hook('commonjs', {
-  // 配置项
+    tab: 4
+    // 配置项
+    // forwardDeclaration: true,
+    // skipBuiltinModules: false
 });
+
 // 某些资源从构建中去除
 fis.set('project.ignore',[
     'application/**',
@@ -20,7 +24,6 @@ fis.set('project.ignore',[
     'package.json'
 ]);
 
-
 // widget发布时产出到 /static目录下
 fis.match('/widget/**', {
     isMod : true,
@@ -28,7 +31,6 @@ fis.match('/widget/**', {
     domain: 'http://192.168.41.104/~liyl/fis-php-ci'
 //    url: '/fis-demo/public/static$0'
 });
-
 
 // 发布 static 文件
 fis.match('/static/**', {
@@ -39,6 +41,7 @@ fis.match('/static/**', {
 
 // umd2commonjs
 fis.match('/static/js/jquery-3.1.0.js', {
+    umd2commonjs: true,
     isMod: true
 });
 
@@ -56,14 +59,6 @@ fis.match("/{page,widget}/**.php",{
     release: '/application/tpl$&'
 });
 
-
-// 开启组件同名依赖
-// 加载了 header.php 组件 可以加载 同名的 header.css , header.js
-// fis.match('*.{html,js,php}', {
-//   useSameNameRequire:
-// });
-
-
 // 上传远程服务器
 fis.media('qa').match('*', {
   deploy: fis.plugin('http-push', {
@@ -77,4 +72,4 @@ fis.media('local').match('*', {
   deploy: fis.plugin('local-deliver', {
     to: 'D:\\Users\\liyl\\AtomProject\\fis3-php-ci'
   })
-})
+});
