@@ -3,3 +3,4 @@ application/tpl/
 application/config/map.json
 node_modules/
 deployment-config.json
+.DS_Store
